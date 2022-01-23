@@ -5,7 +5,13 @@ Project for running Node-RED in Docker
 
 ### Starting development Environment
 
-docker run -p 1880:1880 -v data:/data -e NODE_RED_ENABLE_PROJECTS=true --name kubeedge-nodered nodered/node-red
+docker run -p 1880:1880 -v ${PWD}/data:/data -e NODE_RED_ENABLE_PROJECTS=true --name kubeedge-nodered nodered/node-red
+
+docker-compose up
+
+Will start the development environtment including a mosquitto browser
+
+The flows include a simple dashboard for processing incomming mqtt events.
 
 
 ### Health endpoints

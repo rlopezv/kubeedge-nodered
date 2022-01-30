@@ -5,14 +5,29 @@ Project for running Node-RED in Docker
 
 ### Starting development Environment
 
-docker run -p 1880:1880 -v ${PWD}/data:/data -e NODE_RED_ENABLE_PROJECTS=true --name kubeedge-nodered nodered/node-red
+A docker-compose file starts the development environment including a Mosquitto instalation for testing the data provided by devices.
 
+```
 docker-compose up
 
-Will start the development environtment including a mosquitto browser
+docker-compose down
 
-The flows include a simple dashboard for processing incomming mqtt events.
+docker-compose rm -v
+```
 
+
+### Application description
+
+The implemented flows includes a dashboard that allows to visualize several measures notfified using MQTT.
+
+![Version 1](img/Version1.png)
+
+
+### CI/CD Process
+
+THis respository also includes the required files for creating the docker image (**Dockerfile**) with the application to be deployed in the runtime environment.
+
+The workflow definition (**.gitlab-ci.yml**)
 
 ### Health endpoints
 

@@ -43,3 +43,7 @@ app.use('/live', health.LivenessEndpoint(healthcheck));
 app.use('/ready', health.ReadinessEndpoint(healthcheck));
 app.use('/health', health.HealthEndpoint(healthcheck));
 ```
+
+### CI
+
+File .gitlab-ci contains the description of the CI part. In this case generate the docker image and publishing it.
